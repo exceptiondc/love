@@ -1,0 +1,42 @@
+	
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 我们已经在一起快一年了</span><br />
+				<span class="space"/><span class="comments">*在这一年当中，有高兴，有伤心，有快乐，有烦恼</span><br />
+				<span class="space"/><span class="comments">* 我们也有过争吵，有过互相不理解的时候。</span><br />
+				<span class="space"/><span class="comments">* 可是我们的关系变得越来越稳固，我爱你</span><br />
+				<span class="space"/><span class="comments">* 我们会一直在一起相濡以沫，白头偕老</span><br />
+				<span class="space"/><span class="comments">* 我会好好努力工作，等着我娶你，我的新娘。</span><br />
+				<span class="space"/><span class="comments">* 2016年的冬季一天我第一见到了你,</span><br />
+				<span class="space"/><span class="comments">* 在之后的相处之中,我发现我慢慢的喜欢上了你</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"DongChuang"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"LiuYi"</span>);<br />
+				<span class="comments">//在2016年的7月六日，我告诉你，我喜欢你 </span><br />
+				i.love(u);<br />
+				u.notRecognized();<br />
+				<span class="comments">//你告诉我你有喜欢的人.</span><br />
+			
+				<span class="comments">// 那一瞬间我觉得天空都是灰色的.</span><br />
+				i.skyGrey();<br />
+				<span class="comments">// 后来你请我吃饭.</span><br />
+				<span class="comments">// 你告诉我了很多很多.</span><br />
+				u.tellMany(i);<br />
+				<span class="comments">//我似乎觉得我是有机会的.</span><br />
+				<span class="comments">// 说真的,我做梦都可以笑醒.</span><br />
+				i.veryHappy()<br />
+				<span class="comments">// 后来你答应了做我女朋友,</span><br />
+				<span class="comments">// 那一瞬间我觉得我是世界上最幸福的人,</span><br />
+				<span class="comments">// 我会将我拥有的一切全部给你,</span><br />
+				<span class="comments">// 我会让你成为世界上最美丽的新娘,</span><br />
+				<span class="comments">// 我爱你，刘怡！</span><br />
+				<span class="comments">// 左边这个心形之中记录了我当时写这段程序的时间，会伴随我们俩一直走下去，永远....</span><br />
+				
+				<!--  <span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br /> -->
+				<span class="keyword">while(true)</span>  {<br />
+				<span class="placeholder"/>i.love(u);<br />
+				<span class="placeholder"/>day++;<br />
+				
+				<!-- <span class="placeholder"/><span></span> class="comments">// I think it is an important decision</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br /> -->
+				}<br />
