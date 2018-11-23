@@ -114,8 +114,9 @@
 
 
 		function scrollToEnd(){//滚动到底部
-            var h = $(window).height()-$('#code').height();
-            $('#code').scrollTop(h); 
+            //var h = $(window).height()-$('#code').height();
+            console.log($('.RichContent-inner').height());
+            $('#code').scrollTop($('.RichContent-inner').height()); 
 }
 	</script>
 </body>
