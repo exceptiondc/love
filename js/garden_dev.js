@@ -117,13 +117,23 @@
 	                this.blooms[i].draw();
 	            }
 	        },
-	        addBloom: function (b) {
+	        addBloom: function (b) { 
 	            this.blooms.push(b);
 	        },
 	        removeBloom: function (b) {
 	            var bloom;
 	            for (var i = 0; i < this.blooms.length; i++) {
-	                bloom = this.blooms[i];
+	                bloom = this.blooms[i];3
+
+
+
+
+
+
+
+
+
+
 	                if (bloom === b) {
 	                    this.blooms.splice(i, 1);
 	                    return this;
