@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>app下载</title>
+<meta name="description" content="">
+ <!--   <script type="text/javascript" charset="UTF-8" src="https://res.cdn.openinstall.io/openinstall.js"></script> -->
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"> 
+</head>
+<body>
+<style type="text/css">
+	
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	a{
+		text-decoration: none;
+	}
+	html,body{
+    width:100%;
+    height:100%
+}
+body{
+  background:url("./img/newBack.png") no-repeat;
+  background-size: 100%;
+}
+.-openinstall-banner{
+    display: none;
+}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+	goDownload();
+		
+	});
+	
+	function goDownload() {
+	    if (is_neizhi()){
+	        //内置浏览器  可加提示使其打开手机自带浏览器
+	        return;
+	    }
+	    const iosLinkUrl = "https://apps.apple.com/cn/app/%E5%8C%97%E6%96%97%E5%98%9F%E5%98%9F%E6%89%93%E8%BD%A6/id1617060823";
+	    const androidLinkurl ="https://manage.yueyuechuxing.cn/buildApi/v1/public/app/artifact/2CEC78FB53DA68475A6ADD6647FCFF48.apk";
+	    // const huaweiUrl = 'appmarket://details?id=安卓包名';
+	    // const oppoUrl = "oppomarket://details?packagename=安卓包名";
+	    // const vivoUrl = "vivomarket://details?id=安卓包名";
+	    // const xiaomiUrl = 'mimarket://details?id=安卓包名';
+	    switch (this.verifyBrand()) {
+	        case 'iphone':
+	            window.location.href=iosLinkUrl ;
+	            break;
+	        // case 'xiaomi':
+	        //     window.location.href=xiaomiUrl;
+	        //     break;
+	        // case 'huawei':
+	        //     window.location.href=huaweiUrl;
+	        //     break;
+	        // case 'vivo':
+	        //     window.location.href=vivoUrl;
+	        //     break;
+	        // case 'oppo':
+	        //     window.location.href=oppoUrl;
+	        //     break;
+	        default:
+	            window.location.href=androidLinkurl;
+	            break;
+	    }
+	}
+	function is_neizhi() {
+	    var ua = navigator.userAgent.toLowerCase();
+	    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+	        return "weixin";
+	    } else if (ua.match(/QQ/i) == "qq") {
+	        return "QQ";
+	    } else if (ua.match(/Alipay/i) == "alipay" && payway == 2) {
+	        return "alipay";
+	    }
+	    return false;
+	}
+	function verifyBrand() {
+	    const userAgent = navigator.userAgent.toLowerCase()
+	    const isIphone = userAgent.match(/(iphone|ipad|ipod)/i);
+	    const isHuawei = userAgent.match(/huawei/i);
+	    const isHonor = userAgent.match(/honor/i);
+	    const isOppo = userAgent.match(/oppo/i);
+	    const isOppoR15 = userAgent.match(/PACM00/i);
+	    const isVivo = userAgent.match(/vivo/i);
+	    const isXiaomi = userAgent.match(/mi\s/i);
+	    const isXIAOMI = userAgent.match(/xiaomi/i);
+	    const isXiaomi2s = userAgent.match(/mix\s/i);
+	    const isRedmi = userAgent.match(/redmi/i);
+	 
+	    if (isIphone) {
+	        return 'iphone'
+	    } else if (isHuawei || isHonor) {
+	        return 'huawei';
+	    } else if (isOppo || isOppoR15) {
+	        return 'oppo';
+	    } else if (isVivo) {
+	        return 'vivo';
+	    } else if (isXiaomi || isRedmi || isXiaomi2s || isXIAOMI) {
+	        return 'xiaomi';
+	    } else {
+	        return 'other'
+	    }
+	}
+	
+    //openinstall初始化时将与openinstall服务器交互，应尽可能早的调用
+    /*web页面向app传递的json数据(json string/js Object)，应用被拉起或是首次安装时，通过相应的android/ios api可以获取此数据*/
+    // var data = OpenInstall.parseUrlParams();//openinstall.js中提供的工具函数，解析url中的所有查询参数
+    // new OpenInstall({
+    //     /*appKey必选参数，openinstall平台为每个应用分配的ID*/
+    //     appKey : "x2h6jw",
+    //     /*可选参数，自定义android平台的apk下载文件名；个别andriod浏览器下载时，中文文件名显示乱码，请慎用中文文件名！*/
+    //     //apkFileName : 'com.fm.openinstalldemo-v2.2.0.apk',
+    //     /*可选参数，是否优先考虑拉起app，以牺牲下载体验为代价*/
+    //     //preferWakeup:true,
+    //     /*自定义遮罩的html*/
+    //     //mask:function(){
+    //     //  return "<div id='openinstall_shadow' style='position:fixed;left:0;top:0;background:rgba(0,255,0,0.5);filter:alpha(opacity=50);width:100%;height:100%;z-index:10000;'></div>"
+    //     //},
+    //     /*openinstall初始化完成的回调函数，可选*/
+    //     onready : function() {
+    //         var m = this, button = document.getElementById("downloadButton");
+    //         //button.style.visibility = "visible";
+    //         m.install();        
+    //         /*用户点击某个按钮时(假定按钮id为downloadButton)，安装app*/
+    //         button.onclick = function() {
+    //             m.install();
+    //         }
+    //     }
+    // }, data);
+    // console.log(data)
+</script>
+<body>
+		
+    <div class="content" style="width: 80%;margin: 0px auto;height: 100%;">
+        <div id="downloadButton"
+            style="width: 70%;height: 100px;background: rgb(98, 180, 2);border-radius: 55px;margin: 0px auto;visibility: visible;position: fixed;bottom: 6%;left: 2px;right: 2px;"
+            align="center">
+            <a
+                style="height:41px;font-size: 28px;font-family:YouYuan;font-weight:400;color:rgba(255,255,255,1);line-height: 100px;margin: 0px auto;">立即下载</a>
+        </div>
+        <div class="h5" style="height: 50px;"></div>
+        <div class="h6" style="height: 17px;"></div>
+    </div>
+</body>
+</html>    
